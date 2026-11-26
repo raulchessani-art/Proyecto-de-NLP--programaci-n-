@@ -1,0 +1,3 @@
+words = {"fue","muy","me","al","el","la","de","que","y","en","un","una","los","las","por","para","con","es"}
+palabras_pos = {"bueno","buena","excelente","genial","feliz","alegría","éxito","increíble","útil","mejor","encanta","perfecto","agradable","fantástico","maravilla"}
+palabras_neg = {"malo","mala","terrible","horrible","pésimo","triste","fracaso","odio","problema","error","peor","difícil","molesto","frustrante","desastre"}
