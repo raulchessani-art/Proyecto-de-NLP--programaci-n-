@@ -8,15 +8,15 @@ def seleccionar_archivo(titulo="Seleccionar archivo", tipos_archivo=None):
         tipos_archivo = [("Archivos de texto", "*.txt")]
 
     root = tk.Tk()
-    root.withdraw()  # Oculta la ventana principal vacía de Tkinter
-    root.attributes("-topmost", True)  # Coloca el explorador en primer plano
+    root.withdraw()  
+    root.attributes("-topmost", True)  
 
     ruta = filedialog.askopenfilename(
         title=titulo,
         filetypes=tipos_archivo,
     )
 
-    root.destroy()  # Libera la instancia de Tkinter al cerrar el diálogo
+    root.destroy()  
     return ruta or None
 
 
@@ -25,7 +25,15 @@ def validar():
     while True:
         ruta = seleccionar_archivo()
         if ruta is None:
-            print("No se seleccionó ningún archivo. Intenta de nuevo.")
+            print("No se seleccionó ningún archivo.")
+            while True:
+                opcion = input("¿Quieres salir del programa (s) o continuar (c)? ").strip().lower()
+                if opcion == "s":
+                    print("Saliendo del programa...")
+                    return None
+                if opcion == "c":
+                    break
+                print("Opción no válida. Escribe 's' para salir o 'c' para continuar.")
             continue
 
         with open(ruta, "r", encoding="utf-8") as archivo:
